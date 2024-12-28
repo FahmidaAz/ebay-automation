@@ -20,4 +20,17 @@ public class EbaySearchResultSteps {
 	public void item_list_should_have_products_of(String brand) throws Throwable {
 	   EbaySearchResultActionsObj.verifyBrandItems(brand);
 	}
+	
+	//specify colors
+	
+	@When("^Specific color of \"([^\"]*)\"$")
+	public void specific_color_of(String color) throws Throwable {
+	    EbaySearchResultActionsObj.filterColor(color);
+	}
+
+	@Then("^Item list should have \"([^\"]*)\"$")
+	public void item_list_should_have(String item) throws Throwable {
+		 EbaySearchResultActionsObj.verifyColorItems(item);
+	}
+
 }

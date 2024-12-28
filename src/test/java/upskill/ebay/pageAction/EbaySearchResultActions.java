@@ -46,13 +46,27 @@ public class EbaySearchResultActions {
 		System.out.println("Brand not found");
 	}
 	}
-//	public void verifyBrandAdidas(){
-//		Assert.assertTrue(EbaySearchResultLocatorsObj.cbxBrandAdidas.isDisplayed());
-//	}
-//	public void verifyBrandNike(){
-//		Assert.assertTrue(EbaySearchResultLocatorsObj.cbxBrandNike.isDisplayed());
-//	}
-//	public void verifyBrandUnbranded(){
-//		Assert.assertTrue(EbaySearchResultLocatorsObj.cbxBrandUnbranded.isDisplayed());
-//	}
+	
+   public void filterColor(String color){
+	   if(color.equals("Black")){
+		   EbaySearchResultLocatorsObj.cbxColorBlack.click();
+	   }else if(color.equals("White")){
+		   EbaySearchResultLocatorsObj.cbxColorWhite.click();
+	   }else if(color.equals("Blue")){
+		   EbaySearchResultLocatorsObj.cbxColorBlue.click();
+	   }else{
+		   System.out.println("No colors are selected");
+	   }
+   }
+   public void verifyColorItems(String color){
+	   if(color.equals("Black")){
+	     Assert.assertTrue(EbaySearchResultLocatorsObj.txtShoes.isDisplayed());
+	   }else if(color.equals("White")){
+		   Assert.assertTrue(EbaySearchResultLocatorsObj.txtShirts.isDisplayed());
+	   }else if(color.equals("Blue")){
+		   Assert.assertTrue(EbaySearchResultLocatorsObj.txtPants.isDisplayed());
+	   }else{
+		   System.out.println("No colors are selected");
+	   }
+   }
 }
